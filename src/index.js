@@ -1,8 +1,10 @@
 const express = require('express')
 const app = express()
-
 let port = 3000;
+
 const mongoose = require('mongoose')
+
+const route = require('./Route/route')
 
 
 
@@ -14,7 +16,7 @@ mongoose.connect("mongodb+srv://KA909_1:karthi123@cluster0.qpomb.mongodb.net/A2d
 .then( () => console.log("MongoDb is connected"))
 .catch ( err => console.log(err) )
 
-
+app.use('/', route);
 
 
 
