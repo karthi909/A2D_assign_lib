@@ -37,11 +37,36 @@ const getDts = async (req, res)=>{
 }
 
 const updateBook = async (req, res)=>{
+    let bookId = req.params.bookid
     let data = req.body;
-    let {title, authorName, ISBN, releasedAt, isDeleted, bookPrice, issued, isIssued} = data;
+    let {title, authorName, ISBN, releasedAt, isDeleted, bookPrice } = data;
+
+    let updatedBook = await bookModel.findByIdAndUpdate({ _id: bookId},
+        {
+            title:title,
+            authorName: authorName,
+            ISBN: ISBN,
+            releasedAt: releasedAt,
+            isDeleted: isDeleted,
+            bookPrice: bookPrice
+        },{ new: true });
+        console.log(updatedBook)
+    
+    return res.status(201).send({status:true, msg:"Successful", Data: updatedBook })
 
 
 }
 
+const deleteBooks = async (req, res)=>{
+    let bookId = req.params.bookid
+
+    let dltBook = await bookModel.findByIdAndUpdate({_id: bookId},{isDeleted: true})
+
+    return res.status(200).send({status: true, msg:"Deleted Successfully"})
+}
+
+
 module.exports.createBook = createBook;
 module.exports.getDts = getDts;
+module.exports.updateBook = updateBook;
+module.exports.deleteBooks = deleteBooks;

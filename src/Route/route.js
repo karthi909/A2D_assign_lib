@@ -8,6 +8,8 @@ const issueController = require('../controller/issueController')
 
 router.post('/createBook', bookController.createBook);
 router.get('/getDetails/books', bookController.getDts);
+router.patch('/updateBook/:bookid', bookController.updateBook);
+router.delete('/deleteBook/:bookid', bookController.deleteBooks)
 
 router.post('/createuser', userController.createUser);
 
