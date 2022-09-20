@@ -5,16 +5,15 @@ const ObjectId = mongoose.Schema.Types.ObjectId
 const issueSchema = new mongoose.Schema({
 
     bookId:{
-        type:ObjectId,
+        type: ObjectId,
         ref:'book',
         required: true
     },
     issuedAt:{
-        type: Date,
-        required: true
+        type: String
     },
     userId:{
-        tuype: ObjectId,
+        type: ObjectId,
         ref: 'user',
         required: true
     }

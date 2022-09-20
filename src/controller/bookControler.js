@@ -36,5 +36,12 @@ const getDts = async (req, res)=>{
     }})
 }
 
+const updateBook = async (req, res)=>{
+    let data = req.body;
+    let {title, authorName, ISBN, releasedAt, isDeleted, bookPrice, issued, isIssued} = data;
+
+
+}
+
 module.exports.createBook = createBook;
 module.exports.getDts = getDts;
