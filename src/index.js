@@ -19,8 +19,8 @@ mongoose.connect("mongodb://localhost:27017", {
 app.use('/', route);
 
 
-//mongodb+srv://KA909_1:karthi123@cluster0.qpomb.mongodb.net/A2d_asign
-//mongodb://localhost:27017
+
+
 
 
 
