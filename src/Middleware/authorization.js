@@ -27,4 +27,6 @@ const autz = async (req, res, next)=>{
     }
 };
 
+
+
 module.exports.autz = autz;

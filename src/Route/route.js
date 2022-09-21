@@ -8,16 +8,16 @@ const issueController = require('../controller/issueController')
 const auth = require('../Auth/auth')
 const autz = require('../Middleware/authorization')
 
-router.post('/createBook', bookController.createBook);
+router.post('/createBook',autz.autz, bookController.createBook);
 router.get('/getDetails/books/:libId',autz.autz, bookController.getDts);
-router.patch('/updateBook/:bookid', bookController.updateBook);
+router.patch('/updateBook/:bookid',autz.autz, bookController.updateBook);
 router.delete('/deleteBook/:bookid', bookController.deleteBooks)
 
-router.post('/createuser', userController.createUser);
+router.post('/createuser',autz.autz, userController.createUser);
 
-router.post('/libCreate', libController.createLib);
+router.post('/libCreate',autz.autz, libController.createLib);
 
-router.post('/issueBook', issueController.bookIssue)
+router.post('/issueBook',autz.autz, issueController.bookIssue)
 
 router.post('/login', auth.login);
 

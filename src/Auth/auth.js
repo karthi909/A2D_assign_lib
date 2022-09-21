@@ -10,13 +10,8 @@ const login = async (req, res) => {
         let data = req.body;
         let { email, password } = data;
 
-        if(!email) return res.status(400).send({ status: false, message: "email is required or not valid" })
-        if (!Validator.isValid(email)) return res.status(400).send({ status: false, message: "email is required or not valid" })
-        if (!Validator.isValidEmail(email)) return res.status(400).send({ status: false, message: "email is not valid" })
-
-        
-
-        
+        if(!email) return res.status(400).send({ status: false, message: "please provide Email" });
+        if(!password) return res.status(400).send({status: false, msg:"please provide password "});
 
         let resData = await libModel.findOne({ email: email });
 
