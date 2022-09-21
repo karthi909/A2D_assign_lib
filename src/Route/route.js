@@ -13,9 +13,9 @@ router.get('/getDetails/books/:libId',autz.autz, bookController.getDts);
 router.patch('/updateBook/:bookid',autz.autz, bookController.updateBook);
 router.delete('/deleteBook/:bookid', bookController.deleteBooks)
 
-router.post('/createuser',autz.autz, userController.createUser);
+router.post('/createuser', userController.createUser);
 
-router.post('/libCreate',autz.autz, libController.createLib);
+router.post('/libCreate', libController.createLib);
 
 router.post('/issueBook',autz.autz, issueController.bookIssue)
 

@@ -10,7 +10,7 @@ const route = require('./Route/route')
 
 app.use(express.json());
 
-mongoose.connect("mongodb+srv://KA909_1:karthi123@cluster0.qpomb.mongodb.net/A2d_asign", {
+mongoose.connect("mongodb://localhost:27017", {
     useNewUrlParser: true
 })
 .then( () => console.log("MongoDb is connected"))
@@ -19,8 +19,8 @@ mongoose.connect("mongodb+srv://KA909_1:karthi123@cluster0.qpomb.mongodb.net/A2d
 app.use('/', route);
 
 
-
-
+//mongodb+srv://KA909_1:karthi123@cluster0.qpomb.mongodb.net/A2d_asign
+//mongodb://localhost:27017
 
 
 
