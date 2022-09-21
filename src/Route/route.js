@@ -5,9 +5,11 @@ const bookController = require('../controller/bookControler')
 const userController = require('../controller/userController')
 const libController = require('../controller/librController')
 const issueController = require('../controller/issueController')
+const auth = require('../Auth/auth')
+const autz = require('../Middleware/authorization')
 
 router.post('/createBook', bookController.createBook);
-router.get('/getDetails/books', bookController.getDts);
+router.get('/getDetails/books/:libId',autz.autz, bookController.getDts);
 router.patch('/updateBook/:bookid', bookController.updateBook);
 router.delete('/deleteBook/:bookid', bookController.deleteBooks)
 
@@ -17,6 +19,7 @@ router.post('/libCreate', libController.createLib);
 
 router.post('/issueBook', issueController.bookIssue)
 
+router.post('/login', auth.login);
 
 
 
